@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codificador</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Codificação de Mensagens</title>
 </head>
+
 <body>
     <main>
+        <h1>
+            CODIFICAÇÃO DE MENSAGENS
+        </h1>
+        <textarea name="text" id="" cols="30" rows="10">
 
+        </textarea>
+        <select name="typeCodification" id="">
+            <option value="cifraDeCesar">
+                Cifra de César
+            </option>
+            <option value="base64">
+                Base64
+            </option>
+        </select>
+        <input type="radio" name="codificador" value="codificar">
+        <label>
+            Codificar
+        </label>
+        <input type="radio" name="codificador" value="decodificar">
+        <label>
+            Decodificar
+        </label>
     </main>
 
     <footer>
-        
+        Feito por Letícia Dayane
     </footer>
-    
+
+<script src="script.js"></script>
 </body>
+
 </html>
