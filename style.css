@@ -1,20 +1,48 @@
+@font-face {
+    font-family: harryPotter;
+    src: url(font/HARRYP__.TTF);
+  }
+
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
-    
-    background-image: url('assets/backgroundImage.png');
-    background-repeat: no-repeat;
+/* body {
+    background-image: url('assets/magic.gif'); 
+   background-repeat: no-repeat;
+    background-position: absolute;
     background-size: 100%;
+    height: 100%; 
+} */
+
+
+
+body {
+    background-image: url('assets/blue.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: harryPotter;
 }
+
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+h1 {
+    margin: 30px;
+    font-size: 50px;
 }
 
 footer {
@@ -24,4 +52,61 @@ footer {
     width: 100%;
     background-color: #9CDBEF;
     text-align: center;
+    color: black;
 }
+
+.conteudo {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.codificadores {
+    display: flex;
+}
+
+.codificador{
+    margin-right: 100px;
+}
+
+label {
+    padding: 5px;
+    font-size: 20px;
+}
+
+textarea {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+select {
+    margin: 20px;
+    margin-bottom: 30px;
+}
+
+button{
+    margin-top: 30px;
+    background-color: #9CDBEF;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    /* font-family: harryPotter; */
+}
+
+.button:hover {background-color: #6677b7}
+
+.button:active {
+  background-color: #6677b7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* @media screen and (min-width: 768px) {
+    section{
+        width: 700px;
+    }
+} */

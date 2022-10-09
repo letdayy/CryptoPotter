@@ -6,40 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Codificação de Mensagens</title>
 </head>
 
 <body>
     <main>
-        <h1>
-            CODIFICAÇÃO DE MENSAGENS
-        </h1>
-        <textarea name="text" id="" cols="30" rows="10">
+        <section>
+            <h1>
+                CRYPTO POTTER
+            </h1>
+            <div class="conteudo">
+                <textarea name="text" id="" cols="40" rows="5">
 
         </textarea>
-        <select name="typeCodification" id="">
-            <option value="cifraDeCesar">
-                Cifra de César
-            </option>
-            <option value="base64">
-                Base64
-            </option>
-        </select>
-        <input type="radio" name="codificador" value="codificar">
-        <label>
-            Codificar
-        </label>
-        <input type="radio" name="codificador" value="decodificar">
-        <label>
-            Decodificar
-        </label>
+
+                <select name="" id="">
+                    <option value="cifraDeCesar">
+                        Cifra de César
+                    </option>
+                    <option value="base64">
+                        Base64
+                    </option>
+                </select>
+                <div class="codificadores">
+                    <div class="codificador">
+                        <input type="radio" name="codificador" value="codificar" id="codificador">
+                        <label for="codificador">
+                            Codificar
+                        </label>
+                    </div>
+                    <div class="decodificador">
+                        <input type="radio" name="codificador" value="decodificar" id="decodificador">
+                        <label for="decodificador">
+
+                            Decodificar
+                        </label>
+                    </div>
+                </div>
+
+                <button class="button">Codificar</button>
+        </section>
+
+        <textarea name="text" id="" cols="40" rows="5">
+        </textarea>
     </main>
 
     <footer>
         Feito por Letícia Dayane
     </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
