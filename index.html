@@ -6,55 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <main>
-        <!-- CONTEUDO DA PÁGINA  -->
-        <section>
-            <!-- TITULO DO SITE  -->
-            <h1>
-                CRYPTO POTTER
-            </h1>
-            <!--PRIMEIRA CAIXA DE TEXTO  -->
-            <div class="conteudo">
-                <textarea name="" cols="40" rows="5" placeholder="Digite o texto aqui"></textarea>
+        <div id="form" name="form">
+            <!-- CONTEUDO DA PÁGINA  -->
+            <section>
+                <!-- TITULO DO SITE  -->
+                <h1>
+                    CRYPTO POTTER
+                </h1>
+                <!--PRIMEIRA CAIXA DE TEXTO  -->
+                <div class="conteudo">
+                    <textarea name="" cols="40" rows="5" placeholder="Digite o texto aqui"></textarea>
 
-            <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
-                <select name="" id="">
-                    <option value="cifraDeCesar">
-                        Cifra de César
-                    </option>
-                    <option value="base64">
-                        Base64
-                    </option>
-                </select>
+                    <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
+                    <select name="chooseOption" id="chooseOption">
+                        <option value="empty" id="empty" disabled selected>
+                            Escolha uma opção
+                        </option>
+                        <option value="cesar" id="cesar">
+                            Cifra de César
+                        </option>
+                        <option value="base64" id="base64">
+                            Base64
+                        </option>
+                    </select>
 
-                <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
-                <div class="codificadores">
-                    <div class="codificador">
-                        <input type="radio" name="codificador" value="codificar" id="codificador">
-                        <label for="codificador">
-                            Codificar
-                        </label>
+                    <!-- Incremento do Cifra de César -->
+                    <div style="display: none" id="incrementNumber">
+                        <p>Incremento da cifra</p>
+                        <input type="number" id="increment" min="1" max="26" value="1" placeholder="increment" />
                     </div>
-                    <div class="decodificador">
-                        <input type="radio" name="codificador" value="decodificar" id="decodificador">
-                        <label for="decodificador">
 
-                            Decodificar
-                        </label>
+                    <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
+                    <div class="codificadores">
+                        <div class="codificador">
+                            <input type="radio" name="codificador" value="codificar" id="codificador">
+                            <label for="codificador">
+                                Codificar
+                            </label>
+                        </div>
+                        <div class="decodificador">
+                            <input type="radio" name="codificador" value="decodificar" id="decodificador">
+                            <label for="decodificador">
+                                Decodificar
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- BOTÃO  -->
-                <button class="button">Codificar</button>
+                    <!-- BOTÃO  -->
+                    <button class="button">Codificar</button>
 
-                <!-- SEGUNDA CAIXA DE TEXTO  -->
-                <textarea name="" id="" cols="10" rows="5" placeholder="Resultado aqui"></textarea>
-        </section>
-        <!-- FIM DO CONTEUDO  -->
-        
+                    <!-- SEGUNDA CAIXA DE TEXTO  -->
+                    <textarea name="" id="finalResult" cols="10" rows="5" placeholder="Resultado aqui"></textarea>
+            </section>
+            <!-- FIM DO CONTEUDO  -->
+        </div>
     </main>
 
     <!-- INICIO DO FOOTER  -->
