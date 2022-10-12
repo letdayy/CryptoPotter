@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
     <main>
-        <div id="form" name="form">
+        <div class="forms" name="form">
             <!-- CONTEUDO DA PÁGINA  -->
             <section>
                 <!-- TITULO DO SITE  -->
@@ -20,7 +19,7 @@
                 </h1>
                 <!--PRIMEIRA CAIXA DE TEXTO  -->
                 <div class="conteudo">
-                    <textarea name="" cols="40" rows="5" placeholder="Digite o texto aqui"></textarea>
+                    <textarea name="inbox" cols="40" rows="5" placeholder="Digite o texto aqui" class="inbox"></textarea>
 
                     <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
                     <select name="chooseOption" id="chooseOption">
@@ -36,7 +35,8 @@
                     </select>
 
                     <!-- Incremento do Cifra de César -->
-                    <div style="display: none" id="incrementNumber">
+                    <div id="incrementNumber">
+                        <!-- style="display: none" dentro da div incrementNumber -->
                         <p>Incremento da cifra</p>
                         <input type="number" id="increment" min="1" max="26" value="1" placeholder="increment" />
                     </div>
@@ -44,24 +44,29 @@
                     <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
                     <div class="codificadores">
                         <div class="codificador">
-                            <input type="radio" name="codificador" value="codificar" id="codificador">
-                            <label for="codificador">
+                            <input type="radio" name="code" value="encoder" id="code">
+                            <label for="encode">
                                 Codificar
                             </label>
                         </div>
                         <div class="decodificador">
-                            <input type="radio" name="codificador" value="decodificar" id="decodificador">
-                            <label for="decodificador">
+                            <input type="radio" name="code" value="decoder" id="code">
+                            <label for="decoder">
                                 Decodificar
                             </label>
                         </div>
                     </div>
 
                     <!-- BOTÃO  -->
-                    <button class="button">Codificar</button>
+                    <button class="codifica">Codificar</button>
+
+
+                    <p class="result">
+
+                    </p>
 
                     <!-- SEGUNDA CAIXA DE TEXTO  -->
-                    <textarea name="" id="finalResult" cols="10" rows="5" placeholder="Resultado aqui"></textarea>
+                    <textarea name="" id="finalResult" cols="10" rows="5" placeholder="Resultado aqui" class="saida"></textarea>
             </section>
             <!-- FIM DO CONTEUDO  -->
         </div>
@@ -73,7 +78,7 @@
     </footer>
     <!-- FINAL DO FOOTER  -->
 
-    <script src="script.js"></script>
+    <script src="crypto.js"></script>
 </body>
 
 </html>
