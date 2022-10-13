@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -19,8 +19,9 @@
                 </h1>
                 <!--PRIMEIRA CAIXA DE TEXTO  -->
                 <div class="conteudo">
-                    <textarea name="texto" id="texto" class="inputTexto" cols="40" rows="5" placeholder="Digite o texto aqui"></textarea>
-
+                    <form>
+                    <input type="textarea" name="texto" id="textoParaCodificar" class="inputTexto" cols="40" rows="5" placeholder="Digite o texto aqui">
+                </form>
                     <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
                     <select name="chooseCod" class="chooseCod" id="escolherCod" required>
                         <option value="empty" id="empty" disabled selected>
@@ -44,21 +45,17 @@
                     <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
                     <div class="codificadores">
                         <div class="codificador">
-                            <input type="radio"name="codific" id="codificar" class="radioBtn" value="codificar">
-                            <label for="codificar">
+                            <input type="radio"name="codific" class="radioBtn" id="codific" value="codificar">
                                 Codificar
-                            </label>
                         </div>
                         <div class="decodificador">
-                            <input type="radio" name="codific" id="decodificar"  class="radioBtn" value="decodificar">
-                            <label for="decodificar">
+                            <input type="radio" name="codific" class="radioBtn" id="decodific" value="decodificar">
                                 Decodificar
-                            </label>
                         </div>
                     </div>
 
                     <!-- BOTÃO  -->
-                    <button type="submit" class="btn" name="codMsg" id="submit">Codificar</button>
+                    <button type="submit" id="botaoForm" class="btn" name="codMsg" id="submit">Codificar</button>
 
 
 
@@ -75,7 +72,7 @@
     </footer>
     <!-- FINAL DO FOOTER  -->
 
-    <script src="crypto.js"></script>
+    <script src="js/crypto.js"></script>
 </body>
 
 </html>
