@@ -10,7 +10,7 @@
 
 <body>
     <main>
-        <div class="forms" name="form">
+        <div class="forms" name="formulario">
             <!-- CONTEUDO DA PÁGINA  -->
             <section>
                 <!-- TITULO DO SITE  -->
@@ -19,14 +19,14 @@
                 </h1>
                 <!--PRIMEIRA CAIXA DE TEXTO  -->
                 <div class="conteudo">
-                    <textarea name="inbox" cols="40" rows="5" placeholder="Digite o texto aqui" class="inbox"></textarea>
+                    <textarea name="texto" id="texto" class="inputTexto" cols="40" rows="5" placeholder="Digite o texto aqui"></textarea>
 
                     <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
-                    <select name="chooseOption" id="chooseOption">
+                    <select name="chooseCod" class="chooseCod" id="escolherCod" required>
                         <option value="empty" id="empty" disabled selected>
                             Escolha uma opção
                         </option>
-                        <option value="cesar" id="cesar">
+                        <option value="cCesar" id="cCesar">
                             Cifra de César
                         </option>
                         <option value="base64" id="base64">
@@ -35,38 +35,35 @@
                     </select>
 
                     <!-- Incremento do Cifra de César -->
-                    <div id="incrementNumber">
+                    <div style="display: none" id="valorIncremento">
                         <!-- style="display: none" dentro da div incrementNumber -->
                         <p>Incremento da cifra</p>
-                        <input type="number" id="increment" min="1" max="26" value="1" placeholder="increment" />
+                        <input type="number" class="inputIncremento" id="numeroIncrementos" default="0" min="1" max="26" value="1" />
                     </div>
 
                     <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
                     <div class="codificadores">
                         <div class="codificador">
-                            <input type="radio" name="code" value="encoder" id="code">
-                            <label for="encode">
+                            <input type="radio"name="codific" id="codificar" class="radioBtn" value="codificar">
+                            <label for="codificar">
                                 Codificar
                             </label>
                         </div>
                         <div class="decodificador">
-                            <input type="radio" name="code" value="decoder" id="code">
-                            <label for="decoder">
+                            <input type="radio" name="codific" id="decodificar"  class="radioBtn" value="decodificar">
+                            <label for="decodificar">
                                 Decodificar
                             </label>
                         </div>
                     </div>
 
                     <!-- BOTÃO  -->
-                    <button class="codifica">Codificar</button>
+                    <button type="submit" class="btn" name="codMsg" id="submit">Codificar</button>
 
 
-                    <p class="result">
 
-                    </p>
-
-                    <!-- SEGUNDA CAIXA DE TEXTO  -->
-                    <textarea name="" id="finalResult" cols="10" rows="5" placeholder="Resultado aqui" class="saida"></textarea>
+                    <!-- RESULTADO  -->
+                    <textarea class="areaSaida" id="saidaTexto" cols="10" rows="5" placeholder="Resultado aqui"></textarea>
             </section>
             <!-- FIM DO CONTEUDO  -->
         </div>
