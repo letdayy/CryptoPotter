@@ -1,24 +1,52 @@
 /* Quando clicar na Cifra aparece o incremento */
-var escolhas = document.querySelector("select");
-var botaoForm = document.querySelector("#botaoForm");
+// var choose = document.querySelector("#chooseCod");
+// var buttonCodific = document.querySelector("#btnCodific");
 
-escolhas.addEventListener("change", function (evento) {
-  evento.preventDefault();
+// choose.addEventListener("change", function (evento) {
+//   evento.preventDefault();
 
-  var incremento = document.getElementById("valorIncremento");
+//   var incremento = document.getElementById("valorIncremento");
 
-  if (evento.target.value == "cCesar") {
-    incremento.style = "display: flex";
+//   if (evento.target.value == "cesar") {
+//     incremento.style = "display: flex";
+//   } else {
+//     incremento.style = "display: none";
+//   }
+// });
+
+
+
+// Tornar o incremento visível 
+let choose = document.querySelector('#chooseCod');
+let buttonCodific = document.querySelector("#btnCodific");
+
+choose.addEventListener("change"), function (event) {
+  event.preventDefault();
+
+  let increment = document.querySelector('#increment');
+
+  if (event.target.value == 'cesar') {
+    increment.style = 'display: flex';
   } else {
-    incremento.style = "display: none";
+    increment.style = 'display: none';
   }
-});
+};
+
+
+
+
+
+
+
+
+
+
 
 /* CRIPTOGRAFIAS */
 
 // console.log(botaoForm);
 
-botaoForm.addEventListener("click", function (evento) {
+buttonCodific.addEventListener("click", function (evento) {
   evento.preventDefault();
   
 var texto = document.querySelector('#textoParaCodificar').value;
@@ -29,7 +57,7 @@ var texto = document.querySelector('#textoParaCodificar').value;
   var numeroIncremento = document.querySelector('#numeroIncrementos').value;
   var mensagemFinal = "";
 
-  if (escolha == "cCesar") {
+  if (escolha == "cesar") {
     mensagemFinal = cesar(botoes, texto, numeroIncremento);
   } else {
     mensagemFinal = base64(botoes, texto);
