@@ -1,103 +1,75 @@
-/* Quando clicar na Cifra aparece o incremento */
-// var choose = document.querySelector("#chooseCod");
-// var buttonCodific = document.querySelector("#btnCodific");
 
-// choose.addEventListener("change", function (evento) {
-//   evento.preventDefault();
+/* Fazer o incremento aparecer quando clicar na Cifra */
+let chooseOption = document.querySelector('#chooseOption');
 
-//   var incremento = document.getElementById("valorIncremento");
+chooseOption.addEventListener("change", function(event) {
+    event.preventDefault();
 
-//   if (evento.target.value == "cesar") {
-//     incremento.style = "display: flex";
-//   } else {
-//     incremento.style = "display: none";
-//   }
-// });
+    let increment = document.querySelector('#increment');
 
-
-
-// Tornar o incremento visível 
-let choose = document.querySelector('#chooseCod');
-let buttonCodific = document.querySelector("#btnCodific");
-
-choose.addEventListener("change"), function (event) {
-  event.preventDefault();
-
-  let increment = document.querySelector('#increment');
-
-  if (event.target.value == 'cesar') {
-    increment.style = 'display: flex';
-  } else {
-    increment.style = 'display: none';
-  }
-};
-
-
-
-
-
-
-
-
-
+    if (event.target.value == 'cesar') {
+        increment.style = 'display: flex';
+    } else {
+        increment.style = 'display: none';
+    }
+});
 
 
 /* CRIPTOGRAFIAS */
-
-// console.log(botaoForm);
+let buttonCodific = document.querySelector('#btnCodific');
 
 buttonCodific.addEventListener("click", function (evento) {
-  evento.preventDefault();
+  event.preventDefault();
   
-var texto = document.querySelector('#textoParaCodificar').value;
-  // var texto = formulario;
-  var escolha = document.querySelector('#escolherCod').value;
-  var botoes = document.querySelector('#codific').value;
+var text = document.querySelector('#inputText').value;
+  // var text = formulario;
+  var choose = document.querySelector('#chooseOption').value;
+  var buttons = document.querySelector('#codific').value;
 
-  var numeroIncremento = document.querySelector('#numeroIncrementos').value;
-  var mensagemFinal = "";
+  var incrementNumber = document.querySelector('#incrementNumbers').value;
+  var finalMessage = "";
 
-  if (escolha == "cesar") {
-    mensagemFinal = cesar(botoes, texto, numeroIncremento);
+  if (choose == "cesar") {
+    finalMessage = cesar(buttons, text, incrementNumber);
   } else {
-    mensagemFinal = base64(botoes, texto);
+    finalMessage = base64(buttons, text);
   }
 
-  var resultadoTexto = document.getElementById("saidaTexto");
-  resultadoTexto.innerHTML = `${mensagemFinal}`;
+  var resultText = document.getElementById("exitTest");
+  resultText.innerHTML = `${finalMessage}`;
 });
 
 /* Cifra */
-function cesar(codific, texto, numeroIncremento) {
-  numeroIncremento = Number(numeroIncremento);
+function cesar(codific, text, incrementNumber) {
+  incrementNumber = Number(incrementNumber);
 
-  var mensagemFinal = "";
+  var finalMessage = "";
 
-  for (var i = 0; i < texto.length; i++) {
-    var letra = texto[i];
+  for (var i = 0; i < text.length; i++) {
+    var letra = text[i];
     var codigo = letra.charCodeAt();
 
     if (codific == "codificar") {
-      codigo += numeroIncremento;
+      codigo += incrementNumber;
     } else {
-      codigo -= numeroIncremento;
+      codigo -= incrementNumber;
     }
 
     console.log(codigo)
 
-    mensagemFinal += String.fromCharCode(codigo);
+    finalMessage += String.fromCharCode(codigo);
   }
-  return mensagemFinal;
-  var resultado = document.querySelector('#saidaTexto');
-  resultado.innerHTML = `${mensagemFinal}`;
+  return finalMessage;
+  var result = document.querySelector('#exitTest');
+  result.innerHTML = `${finalMessage}`;
 } 
 
 /* Base */
-function base64(codific, texto) {
+function base64(codific, text) {
   if (codific == "codificar") {
-    return btoa(texto);
+    return btoa(text);
   } else {
-    return atob(texto);
+    return atob(text);
   }
 }
 
