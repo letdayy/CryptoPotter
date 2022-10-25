@@ -1,6 +1,6 @@
 @font-face {
     font-family: harryPotter;
-    /* src: url(font/HARRYP__.TTF); */
+    src: url(HARRYP__.TTF);
 }
 
 * {
@@ -19,17 +19,17 @@
 
 
 body {
-    /* background-image: url('assets/blue.gif');
+    background-image: url(blue.gif);
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     height: 110vh;
     width: 100vw;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: black;
-    /* font-family: harryPotter; */
+    color: white;
+    font-family: harryPotter;
 }
 
 
@@ -122,16 +122,16 @@ button {
 /* TAMANHO PARA CELULARES MUITO PEQUENOS  */
 @media screen and (min-width: 375px) {
     body {
-        /* background-image: url('assets/blue.gif');
+        background-image: url('blue.gif');
         background-repeat: no-repeat;
-        background-size: cover; */
+        background-size: cover;
         height: 100vh;
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: black;
-        /* font-family: harryPotter; */
+        color: white;
+        font-family: harryPotter;
     }
 
     textarea {
