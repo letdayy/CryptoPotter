@@ -43,16 +43,18 @@
                     </div>
 
                     <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
-                    <div class="encoders">
+                    <fieldset class="encoders">
                         <div class="encoder">
-                            <input type="radio"name="codific" class="radioBtn" id="codific" value="codificar">
-                                Codificar
+                            <input type="radio" class="radio" id="code" >
+                            <label for="code"> Codificar</label>
+                               
                         </div>
                         <div class="decoder">
-                            <input type="radio" name="codific" class="radioBtn" id="codific" value="decodificar">
-                                Decodificar
+                            <input type="radio" class="radio" id="decode">
+                            <label for="decode">Decodificar</label>
+                                
                         </div>
-                    </div>
+                    </fieldset>
 
                     <!-- BOTÃO  -->
                     <button type="submit" id="btnCodific" class="btn" name="codMsg" id="submit">Codificar</button>
@@ -72,7 +74,7 @@
     </footer>
     <!-- FINAL DO FOOTER  -->
 
-    <script src="js/crypto.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
