@@ -1,9 +1,3 @@
-let output='';  
-let keyCode=''; 
-let validatePhrase= false; 
-
-
-
 /* Fazer o incremento aparecer quando clicar na Cifra */
 let chooseOption = document.querySelector('#chooseOption');
 
@@ -19,75 +13,55 @@ chooseOption.addEventListener("change", function(event) {
     }
 });
 
+let codifyButton = document.querySelector('#button');
 
-/* Escolher entre Cifra ou Base 64 */
+codifyButton.addEventListener('click', function (event){
+    event.preventDefault();
 
-var radio = document.querySelectorAll(".radio");
-let button = document.querySelector('#btnCodific');
-var msg = document.getElementById("mensagem");
-var key = document.getElementById("chave");
-var result = document.getElementById("resultado");
+    let message = document.querySelector('#message').value;
+    let choose = document.querySelector('#chooseOption').value;
+    let checked = document.querySelector("input[name=code_option]:checked").value;
+    let increment = document.querySelector('#incrementNumber').value;
+    let codifiedMessage = '';
 
-button.addEventListener("click", function (event) {
-  event.preventDefault();
-  var cod = document.getElementById("#btnCodific").value;
-  if (cod == "cesar" && radio[0].checked) {
-    var msgvalue = msg.value.split("");
-    var keyvalue = parseInt(key.value);
-    result.value = cesar(msgvalue, keyvalue);
-  } else if (cod == "cesar" && radio[1].checked) {
-    var msgvalue = msg.value.split("");
-    var keyvalue = parseInt(key.value);
-    result.value = decodeCesar(msgvalue, keyvalue);
-  } else if (cod == "base64" && radio[0].checked) {
-    var msgvalue = msg.value;
-    result.value = btoa(msgvalue);
-  } else {
-    var msgvalue = msg.value;
-    result.value = atob(msgvalue);
-  }
+    if (choose == 'cesar') {
+        codifiedMessage = caesar(checked, message, increment);
+    } else {
+        codifiedMessage = base(checked, message);
+    }
+
+    let resultMessage = document.querySelector('#results');
+    resultMessage.style = 'opacity: 1;'
+    resultMessage.innerHTML = `${codifiedMessage}`;
 });
 
 
-/* Função codificar em Cifra de César */
+function caesar(check, message, increment) {
+    increment = Number(increment);
 
-function cesar(msg, key) {
-    return msg
-      .map((str) => {
-        var entry = str.charCodeAt();
-        if (entry >= 65 && entry <= 90) {
-          return String.fromCharCode(((entry - 65 + key) % 26) + 65);
-        } else if (entry >= 97 && entry <= 122) {
-          return String.fromCharCode(((entry - 97 + key) % 26) + 97);
-        } else {
-          return str;
+    let finalMessage = '';
+
+    for (let i = 0; i < message.length; i++) {
+        letter = message[i];
+        code = letter.charCodeAt();
+
+        if (check == 'code') {
+            code += increment;
+            finalMessage += String.fromCharCode(code);
+        } else if (check == 'decode') {
+            code -= increment;
+            finalMessage += String.fromCharCode(code);
         }
-      })
-      .join("");
-  }
+    }
+
+    return finalMessage;
+};
 
 
-/* Função decodificar em Cifra de César */
-
-function decodeCesar(msg, key) {
-    return msg
-      .map((str) => {
-        var entry = str.charCodeAt();
-        if (entry >= 65 && entry <= 90) {
-          if (entry - 65 - key < 0) {
-            return String.fromCharCode(((entry - 65 - key + 26) % 26) + 65);
-          } else {
-            return String.fromCharCode(((entry - 65 - key) % 26) + 65);
-          }
-        } else if (entry >= 97 && entry <= 122) {
-          if (entry - 97 - key < 0) {
-            return String.fromCharCode(((entry - 97 - key + 26) % 26) + 97);
-          } else {
-            return String.fromCharCode(((entry - 97 - key) % 26) + 97);
-          }
-        } else {
-          return str;
-        }
-      })
-      .join("");
-  }
+function base(check, message) {
+    if (check == 'code') {
+        return btoa(message);
+    } else {
+        return atob(message);
+    }
+};

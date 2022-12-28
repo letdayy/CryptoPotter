@@ -10,27 +10,27 @@
 
 <body>
     <main>
-        <div class="forms" name="formulario">
-            <!-- CONTEUDO DA PÁGINA  -->
+        <div>
+            <!-- CONTEUDO -->
             <section>
-                <!-- TITULO DO SITE  -->
+                <!-- TITULO -->
                 <h1>
                     CRYPTO POTTER
                 </h1>
+
                 <!--PRIMEIRA CAIXA DE TEXTO  -->
-                <div class="conteudo">
                     <form>
-                    <input type="textarea" name="texto" id="inputText" class="inputText" cols="40" rows="5" placeholder="Digite o texto aqui">
-                </form>
+                        <input type="textarea" cols="40" rows="5" placeholder="Digite o texto aqui" id="message">
+                    </form>
                     <!-- ESCOLHER O TIPO DE CRYPTOGRAFIA  -->
-                    <select name="chooseOption" class="chooseOption" id="chooseOption" required>
-                        <option value="empty" id="empty" disabled selected>
+                    <select id="chooseOption" required>
+                        <option value="empty" disabled selected>
                             Escolha uma opção
                         </option>
-                        <option value="cesar" id="cesar">
+                        <option value="cesar">
                             Cifra de César
                         </option>
-                        <option value="base64" id="base64">
+                        <option value="base64">
                             Base64
                         </option>
                     </select>
@@ -39,40 +39,35 @@
                     <div style="display: none" id="increment">
                         <!-- style="display: none" dentro da div incrementNumber -->
                         <p>Incremento da cifra</p>
-                        <input type="number" class="inputIncremento" id="incrementNumbers" default="0" min="1" max="26" value="1" />
+                        <input type="number" default="0" min="1" max="26" value="1" id="incrementNumber" />
                     </div>
 
                     <!-- OPÇÕES DE CODIFICAR OU DECODIFICAR  -->
-                    <fieldset class="encoders">
-                        <div class="encoder">
-                            <input type="radio" class="radio" id="code" >
+                    <form>
+                        <fieldset class="codeDecode">
+                            <input type="radio" name="code_option" id="code" value="code" checked>
                             <label for="code"> Codificar</label>
-                               
-                        </div>
-                        <div class="decoder">
-                            <input type="radio" class="radio" id="decode">
+
+                            <input type="radio" name="code_option" id="decode" value="decode">
                             <label for="decode">Decodificar</label>
-                                
-                        </div>
                     </fieldset>
+                    </form>
 
                     <!-- BOTÃO  -->
-                    <button type="submit" id="btnCodific" class="btn" name="codMsg" id="submit">Codificar</button>
+                    <button type="submit" id="button">Codificar</button>
 
 
 
                     <!-- RESULTADO  -->
-                    <textarea class="areaSaida" id="exitTest" cols="10" rows="5" placeholder="Resultado aqui"></textarea>
+                    <textarea cols="10" rows="5" placeholder="Resultado aqui" id="results"></textarea>
             </section>
-            <!-- FIM DO CONTEUDO  -->
         </div>
     </main>
 
-    <!-- INICIO DO FOOTER  -->
+    <!-- FOOTER  -->
     <footer>
         Feito por <a href="https://github.com/letdayy" target="_blank"> Letícia Dayane </a>
     </footer>
-    <!-- FINAL DO FOOTER  -->
 
     <script src="js/main.js"></script>
 </body>
